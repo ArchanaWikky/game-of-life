@@ -5,10 +5,10 @@ node('HRMS QA') {
 	stage('build'){
 		sh 'mvn clean package'
 	}
-	stage('testresults') {
-		junit 'gameoflife-web/surefire-reports/*.xml'
-	}
 	stage('archiveArtifacts') {
 		archiveArtifacts artifacts: 'gameoflife-web/target/*.war', followSymlinks: false
+	}
+	stage('testresults') {
+		junit 'gameoflife-web/surefire-reports/*.xml'
 	}
 }
