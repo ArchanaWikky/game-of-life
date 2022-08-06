@@ -1,4 +1,4 @@
-node('HRMS QA') {
+node('HRMS&&QA') {
 	stage('git'){
 		git 'https://github.com/ArchanaWikky/game-of-life'
 	}
